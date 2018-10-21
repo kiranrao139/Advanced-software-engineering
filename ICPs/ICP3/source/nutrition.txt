@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>nutrients</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.1/angular.min.js" type="application/javascript"></script>
+    <style>
+        .nutrientModule {
+            background: #f2f2f2;
+            height: 250px;
+            width: 750px;
+            border: 1px dashed #ccc;
+            padding: 1em;
+        }
+    </style>
+</head>
+
+<body>
+<h1 align="center">nutrient report</h1>
+<div align="center">
+    <div ng-app="dishes" ng-controller="myCtrl">
+        <table>
+            <tr>
+                <td> fooditem:</td>
+                <td><input type="text" ng-model="myfood" placeholder="Enter food item type"></td>
+            </tr>
+
+
+        </table>
+        </br>
+        <button id="btn" ng-click="findcalories()"> Show calories </button>
+        <br/>
+        <br/>
+        <div class="nutrientModule">
+            <p class="caloriesamount" ng-bind-html-unsafe="totalcalories.html"></p>
+            <p  ng-bind-html-unsafe="data.html"></p>
+
+        </div>
+    </div>
+</div>
+</body>
+
+<script>
+    angular.module('dishes', []).controller('myCtrl', function($scope,$http) {
+        $scope.findcalories = function(){
+            var fooditem=$scope.myfood;
+
+            $http.get('https://api.edamam.com/api/nutrition-data?app_id=3bab1f30&app_key=24eb1a91c1e3f6a231bb1fa81b304cba&ingr='+fooditem).success(function(data){
+                console.log(data);
+                cal = data.calories;
+                weight = data.totalWeight;
+                health = data.healthLabels;
+
+                console.log(cal);
+
+                $scope.totalcalories = {
+                    html: "Total calories = " + cal + " </br>Total Weight " + weight+ "</br> healthlabels are " +health
+                }
+
+                $scope.data = {
+                    html: "<a href=\" https://stream.watsonplatform.net/text-to-speech/api/v1/synthesize?username=10ed22ca-cf32-427b-9534-61bd1b75ea79&password=tKMNAvR6OvCb&text=" + " total calories is " + cal + " and total weight is " + weight + "health labels are "+health+ "\" > click here for voice response</a>"
+                }
+
+            })
+        }
+
+
+
+    });
+
+</script>
+</html>
