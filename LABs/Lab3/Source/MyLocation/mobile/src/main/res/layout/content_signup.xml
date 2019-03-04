@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.satyasaideepthi.mylocation.Register"
+    tools:showIn="@layout/activity_signup">
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_signup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:text="Create Account"
+        android:onClick="onClickMapLocation"
+        android:layout_above="@+id/link_login"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="36dp"
+        tools:ignore="RtlCompat" />
+
+    <TextView
+        android:id="@+id/link_login"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Already a member? Login"
+        android:onClick="redirectToHome"
+        android:gravity="center"
+        android:textSize="16dip"
+        android:layout_marginBottom="49dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        tools:ignore="RtlCompat" />
+
+    <EditText
+        android:id="@+id/input_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:hint="Password"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:hint="Address"
+        android:id="@+id/input_address"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/input_password"
+        android:layout_above="@+id/btn_signup"
+        tools:ignore="RtlCompat" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Get my address"
+        android:id="@+id/button"
+        android:onClick="getAdrs"
+        android:layout_alignTop="@+id/input_address"
+        android:layout_alignEnd="@+id/input_password"
+        android:layout_marginTop="29dp"
+        tools:ignore="RtlCompat" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageButton"
+        android:src="@drawable/img_icon"
+        android:contentDescription="ImageCapture"
+        android:onClick="selectImage"
+        android:visibility="visible"
+        tools:ignore="RtlCompat"
+        android:layout_below="@+id/lbl_Heading"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="REGISTER"
+        android:textStyle="bold"
+        android:id="@+id/lbl_Heading"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/button"
+        android:layout_toStartOf="@+id/button" />
+
+    <EditText
+        android:id="@+id/input_firstname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textCapWords"
+        android:hint="Full Name"
+        android:layout_marginBottom="22dp"
+        android:layout_above="@+id/input_lastname"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:id="@+id/input_lastname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textCapWords"
+        android:hint="UserName"
+        android:layout_above="@+id/input_email"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="16dp" />
+
+    <EditText
+        android:id="@+id/input_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:hint="Email"
+        android:layout_above="@+id/input_password"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="14dp" />
+
+</RelativeLayout>

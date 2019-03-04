@@ -1,0 +1,1 @@
+In this application user is going to login through facebook,and also register if he/she dont have an account.After logging in, the user can log out or click the Google Vision button to request camera permissions and use their camera to read various texts and also can access through gallery in our system.

@@ -1,0 +1,26 @@
+<ion-view title="Home">
+    <ion-pane>
+        <ion-content ng-controller="myCtrl" style="background: url(img/bg5.jpg);background-size:cover;">
+            </br>
+            <h2 align="center"> Welcome To Lab Assignment - 4  </h2>
+            </br>
+            <button class="button button-block button-positive" ng-click="toggle()">
+                Click here to get current Location Co-Ordinates
+            </button>
+            <h3 align="center"> The Current GPS Co-Ordinates are : </h3   >
+            <div class="card">
+                <div class="item item-text-wrap">
+                    Latitude :<span ng-bind="lat"></span>
+                </div>
+            </div>
+            </br>
+            </br>
+            <div class="card">
+                <div class="item item-text-wrap">
+                    Longitude :<span ng-bind="long"></span>
+                </div>
+            </div>
+            <a class="button button-block button-positive" href="#/tab/restaurants">Click hear to get near by Restaurants</a>
+        </ion-content>
+    </ion-pane>
+</ion-view>
