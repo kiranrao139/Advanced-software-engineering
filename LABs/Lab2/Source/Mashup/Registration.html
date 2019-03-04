@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>REGISTER DETAILS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="register.css">
+    <title>Registration</title>
+    <script>
+        function registration()
+        {
+            if(document.getElementById('fn').value.length>0 && document.getElementById('ln').value.length>0 && document.getElementById('username').value.length>0 && document.getElementById('email').value.length>0 && document.getElementById('password').value.length>0 && document.getElementById('cpassword').value.length>0 &&
+                ( document.getElementById('cpassword').value ==document.getElementById('password').value))
+            {
+                localStorage.setItem('UserName',(document.getElementById('username').value));
+                localStorage.setItem('Password',(document.getElementById('password').value));
+                window.location.href='LoginPage.html';
+            }
+            else
+            {
+                alert('Few details Missing,Try Again !');
+            }
+        }
+    </script>
+</head>
+<body style="background-image:url('http://cdn.wonderfulengineering.com/wp-content/uploads/2016/01/Desktop-Wallpaper-4.jpg') ; background-size:50% , no-rep">
+<input type="button" name="Register" value="HOME" onclick="registration()">
+<div align="center" style="padding-top: 20px">
+
+    <center><p class="form-title"><div class="container"><h2><img src="https://placeholdit.imgix.net/~text?txtsize=50&txtclr=F08080&txt=REGISTER%20DETAILS%20&w=300&h=100"></h2></div>
+        </p></center>
+<center>
+
+    <form>
+        <div>
+            <div>
+                <div class="form-group">
+                    <label for="username" class="cols-sm-2 control-label">FIRST NAME:</label>
+                    <div class="cols-sm-10">
+                <input id="fn" type="text"  name="FIRST NAME :" placeholder=" " size="10" value=""/>
+            </div>
+            <div id=>
+                <div class="form-group">
+                    <label for="username" class="cols-sm-2 control-label">LAST NAME:</label>
+
+                    <div class="cols-sm-10">
+                <input id="ln" type="text" name="lastName" placeholder=" " size="10" value=""/>
+            </div>
+        </div>
+        <div>
+            <div class="form-group">
+                <label for="username" class="cols-sm-2 control-label">USERNAME:</label>
+
+                <div class="cols-sm-10">
+                    <input id="username" type="text" name="username" placeholder=" " size="23" ></div>
+        <div>
+            <div class="form-group">
+                <label for="username" class="cols-sm-2 control-label">EMAIL:</label>
+
+                <div class="cols-sm-10">
+            <input id="email" type="email" name="email" placeholder=" " size=23>
+        </div>
+        <div>
+            <div class="form-group">
+                <label for="password" class="cols-sm-2 control-label">PASSWORD:</label>
+                <div class="cols-sm-10">
+            <input id="password" type="password" name="password12" placeholder=" " size=23>
+        </div>
+        <div>
+            <div class="form-group">
+                <label for="password" class="cols-sm-2 control-label">CONFIRM PASSWORD:</label>
+                <div class="cols-sm-10">
+            <input id="cpassword" type="password" name="password11" placeholder=" " size=23>
+        </div>
+        </div>
+
+        <input type="button" name="Register" value="Register" onclick="registration()">
+    </form>
+</center>
+</body>

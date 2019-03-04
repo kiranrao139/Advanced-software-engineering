@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<right><p class="form-title"><div class="container"><h2><img src="https://placeholdit.imgix.net/~text?txtsize=50&txtclr=F08080&txt=LOGIN%20PAGE&w=500&h=100"></h2></div>
+    </p></right>
+
+<head>
+
+    <meta charset="utf-8">
+    <title>Login Page</title>
+    <meta name="website" content="Lab3">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <meta name="google-signin-client_id" content="282753704496-hj250dtc2h5dg28cv3vgq2m5a40aj4l9.apps.googleusercontent.com">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="login.css">
+    <script src="fblogin.js"></script>
+    <script>
+        function registration()
+        {
+            window.location.href='Registration.html';
+        }
+        function login()
+        {
+            if(document.getElementById('username').value.length>0 && document.getElementById('password').value.length>0)
+            {
+                if(document.getElementById('username').value==localStorage.getItem('UserName')
+                    && document.getElementById('password').value==localStorage.getItem('Password'))
+                {
+                    window.location.href='HomePage.html';
+                }
+                else
+                {
+                    alert('Please enter correct details !');
+                }
+            }
+            else
+            {
+                alert('Few Details Missing,Try Again!');
+            }
+        }
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            if(profile != null || profile != undefined || profile != ''){
+                console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+                console.log(' Username: ' + profile.getName());
+                console.log('Image URL: ' + profile.getImageUrl());
+                console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+                window.location.href = 'HomePage.html';
+            }
+            else
+            {
+                alert('Google Sign In Failed!');
+            }
+
+        }
+
+    </script>
+
+</head>
+
+<div align="centre" style="padding-top: -80px">
+
+   <right><p class="form-title"><div class="container"><h2><img src="https://placeholdit.imgix.net/~text?txtsize=50&txtclr=F08080&txt=LOGIN DETAILS%20&w=300&h=100"></h2></div>
+       </p></right>
+    <div class="form-group">
+        <right><p class="form-title"><div class="container"><h4> <label for="username" class="cols-sm-3 control-label">USERNAME:</label>
+            <input type="text" id="username" placeholder="UserName" align="vertical"/></h4></div>
+            </p></right>
+
+        </div>
+        <div class="form-group">
+            <right><p class="form-title"><div class="container"><h4> <label for="password" class="cols-sm-2 control-label">PASSWORD:</label>
+                <input type="password" id="password" placeholder="Password"/> </h4>
+
+            </div>
+
+
+                <right><p class="form-title"><div class="container"><h4><input type="button" id="login" value="LOGIN" align="center" onclick="login()"/></h4>
+
+    <div>
+        <label style="color:lightcoral">NO ACCOUNT?</label>
+        <a style="color:red; font-weight: bold" href="Registration.html">SIGN UP</a>
+    <br/>
+    <br/>
+    <div class="g-signin2" data-size="xlarge" data-onsuccess="onSignIn"></div>
+
+</body>
+</html>
+
+

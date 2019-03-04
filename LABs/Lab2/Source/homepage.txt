@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AVID</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Awesome videos!" />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/stylesheet.css">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+
+    <script src="https://apis.google.com/js/client.js?onload=init"></script>
+    <script src="translate.js"></script>
+    <link rel="stylesheet" href="login.css">
+</head>
+<center><p class="form-title"><div class="container"><h2><img src="https://placeholdit.imgix.net/~text?txtsize=25&txtclr=F08080&txt=AVID%20MAIN%20PAGE&w=300&h=100"></h2></div>
+    </p></center>
+
+<body>
+
+    <div class="row" align="center">
+        <form action="#">
+
+            <p><h4><b>SELECT:</b></h4></p>
+            <button class="btn">TWITTER</button>
+
+
+            <div class="col2">
+                <div id="results"></div>
+            </div>
+
+            <BR>
+            <button class="btn">FACEBOOK</button>
+
+        </form>
+
+    </div>
+</body>
+</html>
